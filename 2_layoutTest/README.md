@@ -1,5 +1,5 @@
-#实验2-界面布局
-##1.线性布局
+# 实验2-界面布局
+## 1.线性布局
 &emsp;&emsp;在1个垂直线性布局中嵌套4个水平线性布局，实现类似表格的效果
 ```java
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -69,10 +69,10 @@
         android:layout_weight="1"
         android:text="One,Four" />
 ```
-&emsp;&emsp;最终效果如下：
-![线性布局](./screenshot/linearlayout.jpg)
+&emsp;&emsp;最终效果如图：
+![线性布局](/2_layoutTest/screenshot/linearlayout.jpg)
 
-##2.表格布局
+## 2.表格布局
 &emsp;&emsp;在表格布局中添加7个tablerow容器,设置背景色为黑色
 ```java
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -115,11 +115,12 @@
         android:layout_height="1dp"
         android:background="@android:color/white"/>
 ```
-&emsp;&emsp;最终效果如下:
-![表格布局](./screenshot/tablelayout.jpg)
-##3.约束布局1
+&emsp;&emsp;最终效果如图:
+![表格布局](/2_layoutTest/screenshot/tablelayout.jpg)
+## 3.约束布局1
 &emsp;&emsp;为每行按钮设置约束链，使其能够在水平方向上均匀分布，为每列按钮设置约束链，使其能够在竖直方向上均匀分布，具体约束关系见下图
-![约束布局1](/screenshot/constraintlayout1.jpg)
+![约束布局1](/2_layoutTest/screenshot/constraintlayout1.jpg)
+
 &emsp;&emsp;部分实验代码：
 ```java
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -173,13 +174,16 @@
         app:layout_constraintVertical_bias="0.060000002" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-&emsp;&emsp;最终效果如下:
-![约束布局1](/screenshot/constraintlayout2.jpg)
-##4.约束布局2
+&emsp;&emsp;最终效果如图:
+
+![约束布局1](/2_layoutTest/screenshot/constraintlayout2.jpg)
+## 4.约束布局2
 &emsp;&emsp;本题中各构件的位置如图所示
-![约束布局2](/screenshot/constraintlayout3.jpg)
+
+![约束布局2](/2_layoutTest/screenshot/constraintlayout3.jpg)
+
 &emsp;&emsp;最上面三个图标使用约束链进行水平均匀分布，再对它们设置中心线对齐的约束
-![约束布局2](/screenshot/constraintlayout4.jpg)
+![约束布局2](/2_layoutTest/screenshot/constraintlayout4.jpg)
 ```java
     <ImageView
         android:id="@+id/imageView4"
@@ -215,7 +219,7 @@
         app:srcCompat="@drawable/rover_icon" />
 ```
 &emsp;&emsp;中间的双箭头图案和左右两个textview的约束关系如图所示
-![约束布局2](/screenshot/constraintlayout5.jpg)
+![约束布局2](/2_layoutTest/screenshot/constraintlayout5.jpg)
 ```java
     <TextView
         android:id="@+id/textView25"
@@ -270,5 +274,6 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.05" />
 ```
-&emsp;&emsp;最终效果如下：
-![约束布局2](/screenshot/constraintlayout6.jpg)
+&emsp;&emsp;最终效果如图：
+
+![约束布局2](/2_layoutTest/screenshot/constraintlayout6.jpg)
