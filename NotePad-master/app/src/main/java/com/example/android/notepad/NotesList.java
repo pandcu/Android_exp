@@ -292,7 +292,7 @@ public class NotesList extends ListActivity {
                 this.startActivity(intent);
                 return true;
 
-            case R.id.sort1:
+            case R.id.sort1://按照修改时间排序
                 cursor = managedQuery(
                         getIntent().getData(),
                         PROJECTION,
@@ -310,7 +310,7 @@ public class NotesList extends ListActivity {
                 setListAdapter(adapter);
                 return true;
 
-            case R.id.sort2:
+            case R.id.sort2://按照分类排序
                 cursor = managedQuery(
                         getIntent().getData(),
                         PROJECTION,
@@ -328,7 +328,7 @@ public class NotesList extends ListActivity {
                 setListAdapter(adapter);
                 return true;
 
-            case R.id.sort3:
+            case R.id.sort3://按照创建时间排序
                 cursor = managedQuery(
                         getIntent().getData(),
                         PROJECTION,

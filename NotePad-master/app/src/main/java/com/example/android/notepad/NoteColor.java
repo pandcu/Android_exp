@@ -19,7 +19,6 @@ public class NoteColor extends Activity {
             NotePad.Notes.COLUMN_NAME_BACK_COLOR
     };
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

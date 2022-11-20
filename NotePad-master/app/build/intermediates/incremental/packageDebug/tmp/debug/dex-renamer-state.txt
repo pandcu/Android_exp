@@ -1,4 +1,4 @@
-#Sun Nov 20 15:23:35 CST 2022
+#Sun Nov 20 20:21:29 CST 2022
 base.2=C\:\\Users\\pandc\\Desktop\\study\\Android_exp\\NotePad-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
 path.2=7/classes.dex
 base.1=C\:\\Users\\pandc\\Desktop\\study\\Android_exp\\NotePad-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

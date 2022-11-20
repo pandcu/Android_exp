@@ -32,20 +32,20 @@
         "source": "D:\\Android_gradle\\daemon\\7.4\\com.example.android.notepad.app-main-7:\\menu\\editor_options_menu.xml"
     },
     {
-        "merged": "D:\\Android_gradle\\daemon\\7.4\\com.example.android.notepad.app-merged_res-5:\\drawable-hdpi_live_folder_notes.png.flat",
-        "source": "D:\\Android_gradle\\daemon\\7.4\\com.example.android.notepad.app-main-7:\\drawable-hdpi\\live_folder_notes.png"
-    },
-    {
         "merged": "D:\\Android_gradle\\daemon\\7.4\\com.example.android.notepad.app-merged_res-5:\\drawable_ic_menu_compose.png.flat",
         "source": "D:\\Android_gradle\\daemon\\7.4\\com.example.android.notepad.app-main-7:\\drawable\\ic_menu_compose.png"
     },
     {
-        "merged": "D:\\Android_gradle\\daemon\\7.4\\com.example.android.notepad.app-merged_res-5:\\menu_list_options_menu.xml.flat",
-        "source": "D:\\Android_gradle\\daemon\\7.4\\com.example.android.notepad.app-main-7:\\menu\\list_options_menu.xml"
+        "merged": "D:\\Android_gradle\\daemon\\7.4\\com.example.android.notepad.app-merged_res-5:\\drawable-hdpi_live_folder_notes.png.flat",
+        "source": "D:\\Android_gradle\\daemon\\7.4\\com.example.android.notepad.app-main-7:\\drawable-hdpi\\live_folder_notes.png"
     },
     {
         "merged": "D:\\Android_gradle\\daemon\\7.4\\com.example.android.notepad.app-merged_res-5:\\layout_title_editor.xml.flat",
         "source": "D:\\Android_gradle\\daemon\\7.4\\com.example.android.notepad.app-main-7:\\layout\\title_editor.xml"
+    },
+    {
+        "merged": "D:\\Android_gradle\\daemon\\7.4\\com.example.android.notepad.app-merged_res-5:\\menu_list_options_menu.xml.flat",
+        "source": "D:\\Android_gradle\\daemon\\7.4\\com.example.android.notepad.app-main-7:\\menu\\list_options_menu.xml"
     },
     {
         "merged": "D:\\Android_gradle\\daemon\\7.4\\com.example.android.notepad.app-merged_res-5:\\drawable-hdpi_ic_menu_edit.png.flat",
