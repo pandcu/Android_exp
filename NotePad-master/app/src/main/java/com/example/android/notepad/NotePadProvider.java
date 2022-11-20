@@ -155,6 +155,10 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
         sNotesProjectionMap.put(
                 NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE,
                 NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE);
+        sNotesProjectionMap.put(
+               NotePad.Notes.COLUMN_NAME_BACK_COLOR,
+               NotePad.Notes.COLUMN_NAME_BACK_COLOR
+        );
 
         /*
          * Creates an initializes a projection map for handling Live Folders
@@ -169,6 +173,8 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
         // Maps "NAME" to "title AS NAME"
         sLiveFolderProjectionMap.put(LiveFolders.NAME, NotePad.Notes.COLUMN_NAME_TITLE + " AS " +
             LiveFolders.NAME);
+
+
     }
 
     /**
@@ -191,12 +197,14 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
         */
        @Override
        public void onCreate(SQLiteDatabase db) {
+           
            db.execSQL("CREATE TABLE " + NotePad.Notes.TABLE_NAME + " ("
                    + NotePad.Notes._ID + " INTEGER PRIMARY KEY,"
                    + NotePad.Notes.COLUMN_NAME_TITLE + " TEXT,"
                    + NotePad.Notes.COLUMN_NAME_NOTE + " TEXT,"
                    + NotePad.Notes.COLUMN_NAME_CREATE_DATE + " INTEGER,"
-                   + NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE + " INTEGER"
+                   + NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE + " INTEGER,"
+                   + NotePad.Notes.COLUMN_NAME_BACK_COLOR + " INTEGER"
                    + ");");
        }
 
@@ -540,6 +548,10 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
             values.put(NotePad.Notes.COLUMN_NAME_NOTE, "");
         }
 
+        if (values.containsKey(NotePad.Notes.COLUMN_NAME_BACK_COLOR) == false) {
+            values.put(NotePad.Notes.COLUMN_NAME_BACK_COLOR, NotePad.Notes.DEFAULT_COLOR);
+        }
+
         // Opens the database object in "write" mode.
         SQLiteDatabase db = mOpenHelper.getWritableDatabase();
 
@@ -738,14 +750,14 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
         return count;
     }
 
-    /**
-     * A test package can call this to get a handle to the database underlying NotePadProvider,
-     * so it can insert test data into the database. The test case class is responsible for
-     * instantiating the provider in a test context; {@link android.test.ProviderTestCase2} does
-     * this during the call to setUp()
-     *
-     * @return a handle to the database helper object for the provider's data.
-     */
+//    /**
+//     * A test package can call this to get a handle to the database underlying NotePadProvider,
+//     * so it can insert test data into the database. The test case class is responsible for
+//     * instantiating the provider in a test context; {@link android.test.ProviderTestCase2} does
+//     * this during the call to setUp()
+//     *
+//     * @return a handle to the database helper object for the provider's data.
+//     */
     DatabaseHelper getOpenHelperForTest() {
         return mOpenHelper;
     }

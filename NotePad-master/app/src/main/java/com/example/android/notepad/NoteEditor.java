@@ -16,6 +16,7 @@
 
 package com.example.android.notepad;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -27,6 +28,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.net.Uri;
@@ -61,9 +63,10 @@ public class NoteEditor extends Activity {
      */
     private static final String[] PROJECTION =
         new String[] {
-            NotePad.Notes._ID,
-            NotePad.Notes.COLUMN_NAME_TITLE,
-            NotePad.Notes.COLUMN_NAME_NOTE
+                NotePad.Notes._ID,
+                NotePad.Notes.COLUMN_NAME_TITLE,
+                NotePad.Notes.COLUMN_NAME_NOTE,
+                NotePad.Notes.COLUMN_NAME_BACK_COLOR
     };
 
     // A label for the saved state of the activity
@@ -84,7 +87,7 @@ public class NoteEditor extends Activity {
     /**
      * Defines a custom EditText View that draws lines between each line of text that is displayed.
      */
-    public static class LinedEditText extends EditText {
+    public static class LinedEditText extends android.support.v7.widget.AppCompatEditText {
         private Rect mRect;
         private Paint mPaint;
 
@@ -306,6 +309,35 @@ public class NoteEditor extends Activity {
             setTitle(getText(R.string.error_title));
             mText.setText(getText(R.string.error_message));
         }
+
+        @SuppressLint("Range") int x = mCursor.getInt(mCursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_BACK_COLOR));
+        switch (x){
+            case NotePad.Notes.DEFAULT_COLOR:
+                mText.setBackgroundColor(Color.rgb(255, 255, 255));
+                break;
+            case NotePad.Notes.YELLOW_COLOR:
+                mText.setBackgroundColor(Color.rgb(255, 255, 204));
+                break;
+            case NotePad.Notes.BLUE_COLOR:
+                mText.setBackgroundColor(Color.rgb(204, 255, 255));
+                break;
+            case NotePad.Notes.GREEN_COLOR:
+                mText.setBackgroundColor(Color.rgb(204, 255, 204));
+                break;
+            case NotePad.Notes.PURPLE_COLOR:
+                mText.setBackgroundColor(Color.rgb(204, 204, 255));
+                break;
+            case NotePad.Notes.PINK_COLOR:
+                mText.setBackgroundColor(Color.rgb(255, 204, 255));
+                break;
+            case NotePad.Notes.RED_COLOR:
+                mText.setBackgroundColor(Color.rgb(255, 204, 204));
+                break;
+            default:
+                mText.setBackgroundColor(Color.rgb(255, 255, 255));
+                break;
+        }
+
     }
 
     /**
@@ -436,19 +468,24 @@ public class NoteEditor extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle all of the possible menu actions.
         switch (item.getItemId()) {
-        case R.id.menu_save:
-            String text = mText.getText().toString();
-            updateNote(text, null);
-            finish();
-            break;
-        case R.id.menu_delete:
-            deleteNote();
-            finish();
-            break;
-        case R.id.menu_revert:
-            cancelNote();
-            break;
+            case R.id.menu_save:
+                String text = mText.getText().toString();
+                updateNote(text, null);
+                finish();
+                break;
+            case R.id.menu_delete:
+                deleteNote();
+                finish();
+                break;
+            case R.id.menu_revert:
+                cancelNote();
+                break;
+            case R.id.menu_color:
+                changeColor();
+                break;
+
         }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -529,7 +566,7 @@ public class NoteEditor extends Activity {
         // Sets up a map to contain values to be updated in the provider.
         ContentValues values = new ContentValues();
         Long now = Long.valueOf(System.currentTimeMillis());
-        SimpleDateFormat sf = new SimpleDateFormat("yy/MM/dd HH:mm");
+        SimpleDateFormat sf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
         Date date = new Date(now);
         String format = sf.format(date);
         values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, format);
@@ -619,5 +656,11 @@ public class NoteEditor extends Activity {
             getContentResolver().delete(mUri, null, null);
             mText.setText("");
         }
+    }
+
+    private final void changeColor() {
+        Intent intent = new Intent(null, mUri);
+        intent.setClass(NoteEditor.this, NoteColor.class);
+        NoteEditor.this.startActivity(intent);
     }
 }

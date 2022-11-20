@@ -6,3 +6,7 @@ com.example.android.notepad.app-mergeDebugResources-4 C:\Users\pandc\Desktop\stu
 com.example.android.notepad.app-merged_res-5 C:\Users\pandc\Desktop\study\Android_exp\NotePad-master\app\build\intermediates\merged_res\debug
 com.example.android.notepad.app-debug-6 C:\Users\pandc\Desktop\study\Android_exp\NotePad-master\app\src\debug\res
 com.example.android.notepad.app-main-7 C:\Users\pandc\Desktop\study\Android_exp\NotePad-master\app\src\main\res
+com.example.android.notepad.app-appcompat-v7-28.0.0-8 D:\Android_gradle\caches\transforms-3\04f28d5788201cd73b872826eab7a26d\transformed\appcompat-v7-28.0.0\res
+com.example.android.notepad.app-support-compat-28.0.0-9 D:\Android_gradle\caches\transforms-3\64f5294f27fc4cc3b991dc2a5b4630f6\transformed\support-compat-28.0.0\res
+com.example.android.notepad.app-constraint-layout-2.0.4-10 D:\Android_gradle\caches\transforms-3\8843d97e41ccc43e2e827de286cf32f3\transformed\constraint-layout-2.0.4\res
+com.example.android.notepad.app-coordinatorlayout-28.0.0-11 D:\Android_gradle\caches\transforms-3\8d589cbbc3eed7c3e713494e965b714c\transformed\coordinatorlayout-28.0.0\res
