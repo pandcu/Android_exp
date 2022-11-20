@@ -7,25 +7,25 @@
 - 排序功能
 
 ## 项目结构介绍
-- 主要的类：
-**NotesList** 应用程序入口，在笔记本的首页显示笔记列表
-**NoteEditer** 实现编辑笔记内容功能
-**TitleEditor** 实现编辑笔记标题的功能
-**NotePad** 契约类，描述数据库
-**NotePadProvider** 进行数据库操作
-以上为应用原有的类，本次功能扩展新增3个类：
-**NoteSearch** 实现搜索笔记的功能
-**NoteColor** 实现改变笔记背景颜色功能
-**MyCursorAdapter** 继承自SimpleCursorAdapter，实现listview的颜色填充
-- 主要的布局文件
-**note_editor** 笔记本首页面布局
-**notelist_item** 笔记列表项布局
-**title_editor** 修改笔记主题的对话框布局
-**note_search** 搜索笔记页面布局
-**note_color** 选择笔记分类对话框布局
-- 主要的菜单文件
-**editor_option_menu** 笔记编辑页面的菜单布局
-**list_options_menu** 主页面菜单布局
+- 主要的类：  
+**NotesList** 应用程序入口，在笔记本的首页显示笔记列表  
+**NoteEditer** 实现编辑笔记内容功能  
+**TitleEditor** 实现编辑笔记标题的功能  
+**NotePad** 契约类，描述数据库  
+**NotePadProvider** 进行数据库操作  
+以上为应用原有的类，本次功能扩展新增3个类：  
+**NoteSearch** 实现搜索笔记的功能  
+**NoteColor** 实现改变笔记背景颜色功能  
+**MyCursorAdapter** 继承自SimpleCursorAdapter，实现listview的颜色填充  
+- 主要的布局文件  
+**note_editor** 笔记本首页面布局  
+**notelist_item** 笔记列表项布局  
+**title_editor** 修改笔记主题的对话框布局  
+**note_search** 搜索笔记页面布局  
+**note_color** 选择笔记分类对话框布局  
+- 主要的菜单文件  
+**editor_option_menu** 笔记编辑页面的菜单布局  
+**list_options_menu** 主页面菜单布局  
 
 ## 拓展功能详解
 ### 1. 时间戳功能
@@ -83,7 +83,7 @@ int[] viewIDs = { R.id.text1, R.id.text2};
     values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, format);
 ```
 #### 1.4 功能展示
-![时间戳功能](/screenshot/%E6%97%B6%E9%97%B4%E6%88%B3%E5%8A%9F%E8%83%BD.jpg)
+![时间戳功能](/NotePad-master/screenshot/%E6%97%B6%E9%97%B4%E6%88%B3%E5%8A%9F%E8%83%BD.jpg)
 ### 2. 搜索功能
 #### 2.1 修改菜单布局
 在list_options_menu.xml布局文件中添加一个item作为搜索功能的入口
@@ -202,11 +202,11 @@ switch (item.getItemId()) {
     android:label="@string/search_note"/>
 ```
 #### 2.6 功能展示
-对标题的搜索：
-![搜索标题](/screenshot/%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD.jpg)
-对内容的搜索：
-![搜索内容1](/screenshot/%E5%86%85%E5%AE%B9%E6%90%9C%E7%B4%A22.jpg)
-![搜索内容2](/screenshot/%E5%86%85%E5%AE%B9%E6%90%9C%E7%B4%A21.jpg)
+- 对标题的搜索：  
+![搜索标题](/NotePad-master/screenshot/%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD.jpg)  
+- 对内容的搜索：  
+![搜索内容1](/NotePad-master/screenshot/%E5%86%85%E5%AE%B9%E6%90%9C%E7%B4%A22.jpg)
+![搜索内容2](/NotePad-master/screenshot/%E5%86%85%E5%AE%B9%E6%90%9C%E7%B4%A21.jpg)
 ### 3. 界面UI美化
 #### 3.1 主题更换
 在清单文件中为每个Activity标签增加theme属性以设置主题
@@ -313,7 +313,7 @@ public class MyCursorAdapter extends SimpleCursorAdapter {
 ```
 #### 3.5 功能展示
 由于还没有修改颜色的功能，所以目前所有的列表项都是默认颜色白色，可以通过在SQLite中修改color字段的值来修改列表项的颜色
-![UI美化](/screenshot/UI%E7%BE%8E%E5%8C%96.jpg)
+![UI美化](/NotePad-master/screenshot/UI%E7%BE%8E%E5%8C%96.jpg)
 
 ### 4. 笔记分类（背景颜色更换）
 #### 4.1 新建类文件
@@ -463,10 +463,10 @@ private final void changeColor() {
     android:theme="@android:style/Theme.Holo.Light.Dialog" />
 ```
 #### 4.6 功能展示
-修改笔记“测试2”的分类（背景颜色）
-![分类功能1](/screenshot/%E5%88%86%E7%B1%BB%E5%8A%9F%E8%83%BD3.jpg)
-![分类功能2](/screenshot/%E5%88%86%E7%B1%BB%E5%8A%9F%E8%83%BD1.jpg)
-![分类功能3](/screenshot/%E5%88%86%E7%B1%BB%E5%8A%9F%E8%83%BD2.jpg)
+修改笔记“测试2”的分类（背景颜色）  
+![分类功能1](/NotePad-master/screenshot/%E5%88%86%E7%B1%BB%E5%8A%9F%E8%83%BD3.jpg)
+![分类功能2](/NotePad-master/screenshot/%E5%88%86%E7%B1%BB%E5%8A%9F%E8%83%BD1.jpg)
+![分类功能3](/NotePad-master/screenshot/%E5%88%86%E7%B1%BB%E5%8A%9F%E8%83%BD2.jpg)
 
 ### 5. 排序功能
 #### 5.1 修改菜单布局
@@ -490,7 +490,7 @@ private final void changeColor() {
 </item>
 ```
 效果如图：
-![排序菜单](/screenshot/%E6%8E%92%E5%BA%8F%E5%8A%9F%E8%83%BD.jpg)
+![排序菜单](/NotePad-master/screenshot/%E6%8E%92%E5%BA%8F%E5%8A%9F%E8%83%BD.jpg)
 #### 5.2 修改NotesList.java
 在onOptionsItemSelected函数的switch中添加修改列表项排列顺序的case
 ```java
@@ -554,9 +554,9 @@ case R.id.sort3:
     return true;
 ```
 #### 5.3 功能展示
-- 修改时间排序
-![修改时间排序](/screenshot/%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4%E6%8E%92%E5%BA%8F.jpg)
-- 分类排序
-![分类排序](/screenshot/%E5%88%86%E7%B1%BB%E6%8E%92%E5%BA%8F.jpg)
-- 创建时间排序
-![创建时间排序](/screenshot/%E5%88%9B%E5%BB%BA%E6%97%B6%E9%97%B4%E6%8E%92%E5%BA%8F.jpg)
+- 修改时间排序  
+![修改时间排序](/NotePad-master/screenshot/%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4%E6%8E%92%E5%BA%8F.jpg)  
+- 分类排序  
+![分类排序](/NotePad-master/screenshot/%E5%88%86%E7%B1%BB%E6%8E%92%E5%BA%8F.jpg)  
+- 创建时间排序  
+![创建时间排序](/NotePad-master/screenshot/%E5%88%9B%E5%BB%BA%E6%97%B6%E9%97%B4%E6%8E%92%E5%BA%8F.jpg)
