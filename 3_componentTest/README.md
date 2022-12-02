@@ -60,11 +60,11 @@ SimpleAdapter的构造函数如下
 ```java
 SimpleAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to)
 ```
-> context：上下文
-> data：数据源，一个包含Map的数据集合
->resource：item的布局文件
->from：数据来源的key的数组，与data的Map里的key对应
->to:  from中的每一项数据源 对应到的 item布局中对应组件的 id。
+> context：上下文  
+> data：数据源，一个包含Map的数据集合  
+>resource：item的布局文件  
+>from：数据来源的key的数组，与data的Map里的key对应  
+>to:  from中的每一项数据源 对应到的 item布局中对应组件的 id  
 
 其中的data参数需要我们定义一由map映射构成的列表，在Activity中加入以下代码
 ```java
