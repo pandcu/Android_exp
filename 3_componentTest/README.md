@@ -198,7 +198,7 @@ alertdialog.setOnClickListener(new View.OnClickListener() {
 ![alertdialog](/3_componentTest/screenshot/alert1.jpg)
 ## 3. 使用XML自定义菜单
 新建一个Activity，在其布局文件内放置一个文本框，框内文字作为之后调整样式的对象  
-![menu](/3_componentTest/screenshot/menu5.jpg)
+![menu](/3_componentTest/screenshot/menu5.jpg)  
 新建一个menu资源文件，定义菜单项布局层级
 ```java
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
