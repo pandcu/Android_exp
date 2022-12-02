@@ -271,7 +271,7 @@ SimpleAdapter adapter = new SimpleAdapter(ActionmodeActivity.this, listitems, R.
 ListView list = findViewById(R.id.actionmodelist);
 list.setAdapter(adapter);
 ```
-![ActionMode](/3_componentTest/screenshot/actionmode2.jpg)
+![ActionMode](/3_componentTest/screenshot/actionmode2.jpg)  
 将ListView设置为多选模式，为其添加多选相关事件
 ```java
 list.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
