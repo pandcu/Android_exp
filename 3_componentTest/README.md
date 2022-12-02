@@ -14,7 +14,7 @@
 
 </LinearLayout>
 ```
-![listview](/screenshot/listview2.jpg)
+![listview](/3_componentTest/screenshot/listview2.jpg)
 新建一个xml布局文件，作为ListView中每行的布局，将文本框和图像框的id命名为“animalName”和“animalImage”，以便后续改变其所含文本和图片
 ```java
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -50,7 +50,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
 ```
-![listview](/screenshot/listview3.jpg)
+![listview](/3_componentTest/screenshot/listview3.jpg)
 在Activity中定义一个字符串数组和一个int型数组，分别用于存放每行的文字信息和图片信息
 ```java
 private String[] animalname = {"Lion", "Tiger", "Monkey", "Dog", "Cat", "Elephant"};
@@ -101,7 +101,7 @@ list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 </selector>
 ```
 最终实现效果如图  
-![listview](/screenshot/listview1.jpg)
+![listview](/3_componentTest/screenshot/listview1.jpg)
 ## 2. 自定义布局的AlertDialog
 新建一个xml布局文件作为AlertDialog的布局
 ```java
@@ -167,7 +167,7 @@ list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
     </LinearLayout>
 </LinearLayout>
 ```
-![alertdialog](/screenshot/alert3.jpg)
+![alertdialog](/3_componentTest/screenshot/alert3.jpg)
 在MainActivity的布局文件中新增一个按钮用于唤起AlertDialog，在MainActivity中通过id获取到该按钮，为其绑定点击事件，使得点击该按钮时会唤起一个AlertDialog，用先前创建的xml文件作为其布局。AlertDialog出现后，可以通过点击旁边的区域获点击cancel按钮/sign in按钮来关闭
 ```java
 View alertdialog = findViewById(R.id.AlertDialogbtn);
@@ -194,8 +194,8 @@ alertdialog.setOnClickListener(new View.OnClickListener() {
 });
 ```
 最终实现效果如图  
-![alertdialog](/screenshot/alert2.jpg)
-![alertdialog](/screenshot/alert1.jpg)
+![alertdialog](/3_componentTest/screenshot/alert2.jpg)
+![alertdialog](/3_componentTest/screenshot/alert1.jpg)
 ## 3. 使用XML自定义菜单
 新建一个Activity，在其布局文件内放置一个文本框，框内文字作为之后调整样式的对象  
 ![menu](/screenshot/menu5.jpg)
@@ -252,10 +252,10 @@ public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 }
 ```
 最终实现效果如图  
-![menu](/screenshot/menu1.jpg)
-![menu](/screenshot/menu2.jpg)
-![menu](/screenshot/menu4.jpg)
-![menu](/screenshot/menu3.jpg)
+![menu](/3_componentTest/screenshot/menu1.jpg)
+![menu](/3_componentTest/screenshot/menu2.jpg)
+![menu](/3_componentTest/screenshot/menu4.jpg)
+![menu](/3_componentTest/screenshot/menu3.jpg)
 ## 4. 创建ActionMode形式的上下文菜单
 新建一个Activity，在其布局文件中放置一个ListView，新建xml布局文件定义ListView每行的布局  
 ![ActionMode](/screenshot/actionmode3.jpg)
@@ -271,7 +271,7 @@ SimpleAdapter adapter = new SimpleAdapter(ActionmodeActivity.this, listitems, R.
 ListView list = findViewById(R.id.actionmodelist);
 list.setAdapter(adapter);
 ```
-![ActionMode](/screenshot/actionmode2.jpg)
+![ActionMode](/3_componentTest/screenshot/actionmode2.jpg)
 将ListView设置为多选模式，为其添加多选相关事件
 ```java
 list.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
@@ -313,4 +313,4 @@ list.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
 </menu>
 ```
 最终实现效果如图  
-![ActionMode](/screenshot/actionmode.jpg)
+![ActionMode](/3_componentTest/screenshot/actionmode.jpg)
