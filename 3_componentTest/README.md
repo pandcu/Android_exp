@@ -258,7 +258,7 @@ public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 ![menu](/3_componentTest/screenshot/menu3.jpg)
 ## 4. 创建ActionMode形式的上下文菜单
 新建一个Activity，在其布局文件中放置一个ListView，新建xml布局文件定义ListView每行的布局  
-![ActionMode](/3_componentTest/screenshot/actionmode3.jpg)
+![ActionMode](/3_componentTest/screenshot/actionmode3.jpg)  
 使用SimpleAdapter填充ListView的内容
 ```java
 List<Map<String, String>> listitems = new ArrayList<>();
