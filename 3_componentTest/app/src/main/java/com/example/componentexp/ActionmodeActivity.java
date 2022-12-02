@@ -38,9 +38,11 @@ public class ActionmodeActivity extends AppCompatActivity {
         list.setAdapter(adapter);
         list.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
         list.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
+            int count = 0;
             @Override
             public void onItemCheckedStateChanged(ActionMode actionMode, int i, long l, boolean b) {
-                actionMode.setTitle("title");
+                count = list.getCheckedItemCount();
+                actionMode.setTitle(count + " select");
             }
 
             @Override
